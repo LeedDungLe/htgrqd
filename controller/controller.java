@@ -25,7 +25,7 @@ public class controller {
     
     boolean sameImportantLvl;
     private double e = 0.02;
-    private double result;
+    
     
     private ketQuaGUI kq;
     private caChanDoanGUI caChanDoan ;
@@ -189,28 +189,64 @@ public class controller {
     }
     
     public void calcBenhKhongCoTamQuanTrong(){
-        for (benh i : benhs){
+        for (benh benh : benhs){
             double DXN = 0;
-            for ( luat luat : luats){
-                double dxn = 1 ;
-                if( i.equals(luat.getBenh())){
-                    for (Xung xung: xungs){
-                        if(luat.getXung().equals(xung)){
+            for ( Xung xung: xungs){
+                double dxn = 0 ;
+                for (luat luat : luats){
+                    if( luat.getXung().equals(xung)){
+                        if(benh.equals(luat.getBenh())){
                             dxn = Math.min( luat.getWeight(),xung.getMucDo());
                         }
                     }
-                                      
                 }
+                DXN = Math.max(dxn, DXN);
             }
-            
+           benh.setDoXacNhan(DXN);
         }
     }
     
     public void calcBenhCoTamQuanTrong(){
-        
+        for (benh benh : benhs){
+            double DXN = 0;
+            for ( Xung xung: xungs){
+                double dxn = 0 ;
+                for (luat luat : luats){
+                    for( tamQuanTrongXungBenh tqt : importantness){     
+                        if( tqt.getBenh().equals(benh) & tqt.getXung().equals(xung)){
+                            if( luat.getXung().equals(xung)){
+                                 if(benh.equals(luat.getBenh())){
+                                 dxn = Math.min( Math.min(xung.getMucDo(), tqt.getGiaTri()),luat.getWeight());
+                                }   
+                            }
+                        }
+                    }
+                    
+                }
+                DXN = Math.max(dxn, DXN);
+            }
+           benh.setDoXacNhan(DXN);
+        }
+    }
+ 
+    public void setThongTins(){
+        for(benh benh: benhs){
+            double gt = benh.getDoXacNhan();
+            String tt ;
+            if(gt == 1){
+                tt = "Hoàn toàn xác nhận";
+            }else if(gt < 1 & gt >=  0.6){
+                tt = "Gần như xác nhận";
+            }else if(gt < 0.6 & gt >= e ){
+                tt ="Có thể xác nhận";
+            }else if (gt < e & gt > 0){
+                tt="Không xác định";
+            }else{
+                tt="Loại trừ hoàn toàn";
+            }
+            benh.setThongTin(tt);
+        }        
     }
     
-
-
 
 }

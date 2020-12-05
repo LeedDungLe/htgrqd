@@ -7,6 +7,8 @@ public class benh {
     private String tenBenh;
     private double weight;
     private double doXacNhan;
+    private String thongTin;
+    
 
     public benh(int id, String tenBenh) {
         this.id = id;
@@ -20,6 +22,16 @@ public class benh {
         this.weight = weight;
     }
 
+    public String getThongTin() {
+        return thongTin;
+    }
+
+    public void setThongTin(String thongTin) {
+        this.thongTin = thongTin;
+    }
+
+    
+    
     public benh(String tenBenh) {
         this.tenBenh = tenBenh;
     }

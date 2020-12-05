@@ -43,6 +43,8 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
          model.setValueAt(importantness.get(i).getXung().getTenXung(), i, 1);
          model.setValueAt(importantness.get(i).getGiaTri(), i, 2);
 
+      }
+        
          String cacTrieuChung = "";
          for( benh benh : ctrl.getBenhs()){
              cacTrieuChung += benh.getTenBenh()+", ";
@@ -50,7 +52,6 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
          cacTrieuchungLb.setText(cacTrieuChung);
         jTable1.setEnabled(false);
         jTable1.setBackground(Color.LIGHT_GRAY);
-      }
     }
 
     /**
@@ -205,10 +206,18 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
     private void startCalcBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_startCalcBtnMouseClicked
         // TODO add your handling code here:
         if(setImportantLvlComboBox.getSelectedIndex() == 0){
-            
+            ctrl.calcBenhKhongCoTamQuanTrong();
+            for (benh benh : ctrl.getBenhs()){
+                System.out.println(benh.getTenBenh()+ " : "+benh.getDoXacNhan());
+            }
         }else{
-            
+            ctrl.calcBenhCoTamQuanTrong();
+            for (benh benh : ctrl.getBenhs()){
+                System.out.println(benh.getTenBenh()+ " : "+benh.getDoXacNhan());
+            }
         }
+        
+        ctrl.setThongTins();
         
         this.setVisible(false);
         ctrl.setImportantLvl(this);
@@ -220,12 +229,11 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
         
        if (evt.getStateChange() == ItemEvent.SELECTED) {
           Object item = evt.getItem();
-          // do something with object
-           System.out.println(item);
            if("Như nhau".equals((String)item)){
                jTable1.setEnabled(false);
                jTable1.setBackground(Color.LIGHT_GRAY);
            }else{
+               jTable1.setEnabled(true);
                jTable1.setBackground(Color.WHITE);
            }
           

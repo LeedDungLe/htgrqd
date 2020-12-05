@@ -13,7 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Xung;
+import model.*;
 
 /**
  *
@@ -97,7 +97,11 @@ public class nhapXungGUI extends javax.swing.JFrame {
 
         jLabel3.setText("Độ mờ");
 
-        fuzzyLvl.setText("1");
+        fuzzyLvl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fuzzyLvlActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Tay");
 
@@ -133,7 +137,7 @@ public class nhapXungGUI extends javax.swing.JFrame {
             }
         });
 
-        tenXungComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Superficial", "Substantive" }));
+        tenXungComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Superficial", "Substantive", "Stringy", "Deep", "Slow", "Rapid", "Slippery", "Irregular", "Deficiency", " " }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,7 +227,9 @@ public class nhapXungGUI extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(nhapXungGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        System.out.println(ctrl.gettamQuanTrongs());
+        //System.out.println(ctrl.gettamQuanTrongs());
+        
+        
         
         this.setVisible(false);
         ctrl.setNhapXung(this);
@@ -266,6 +272,10 @@ public class nhapXungGUI extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_addBtnMouseClicked
+
+    private void fuzzyLvlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fuzzyLvlActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_fuzzyLvlActionPerformed
 
     /**
      * @param args the command line arguments

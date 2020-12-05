@@ -180,9 +180,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="fuzzyLvl">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="1"/>
-      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fuzzyLvlActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
@@ -251,9 +251,17 @@
     <Component class="javax.swing.JComboBox" name="tenXungComboBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="2">
+          <StringArray count="10">
             <StringItem index="0" value="Superficial"/>
             <StringItem index="1" value="Substantive"/>
+            <StringItem index="2" value="Stringy"/>
+            <StringItem index="3" value="Deep"/>
+            <StringItem index="4" value="Slow"/>
+            <StringItem index="5" value="Rapid"/>
+            <StringItem index="6" value="Slippery"/>
+            <StringItem index="7" value="Irregular"/>
+            <StringItem index="8" value="Deficiency"/>
+            <StringItem index="9" value=" "/>
           </StringArray>
         </Property>
       </Properties>

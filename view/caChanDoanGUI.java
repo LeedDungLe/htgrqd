@@ -51,7 +51,6 @@ public class caChanDoanGUI extends javax.swing.JFrame {
 
         jLabel1.setText("Họ và tên");
 
-        ten.setText("1");
         ten.setToolTipText("");
         ten.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,21 +64,18 @@ public class caChanDoanGUI extends javax.swing.JFrame {
 
         jLabel4.setText("Cân nặng");
 
-        chieuCao.setText("1");
         chieuCao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chieuCaoActionPerformed(evt);
             }
         });
 
-        tuoi.setText("1");
         tuoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tuoiActionPerformed(evt);
             }
         });
 
-        canNang.setText("1");
         canNang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 canNangActionPerformed(evt);
@@ -89,7 +85,6 @@ public class caChanDoanGUI extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Tạo ca chẩn đoán");
 
-        diaChi.setText("1");
         diaChi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 diaChiActionPerformed(evt);

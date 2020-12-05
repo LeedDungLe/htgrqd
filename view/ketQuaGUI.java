@@ -6,6 +6,10 @@
 package view;
 
 import controller.controller;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.*;
 
 /**
  *
@@ -19,6 +23,21 @@ public class ketQuaGUI extends javax.swing.JFrame {
     public ketQuaGUI(controller ctrl) {
         initComponents();
         this.ctrl = ctrl;
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+      
+        List<benh> benhs = new ArrayList<>();
+        benhs.addAll(ctrl.getBenhs());
+        jTable1.getColumnModel().getColumn(0).setPreferredWidth(25);
+        jTable1.getColumnModel().getColumn(1).setPreferredWidth(20);
+        jTable1.getColumnModel().getColumn(2).setPreferredWidth(100);
+        for(int i = 0;i < benhs.size(); i++) {
+            model.addRow(new Object[0]);
+            model.setValueAt(benhs.get(i).getTenBenh(), i, 0);
+            model.setValueAt(String.valueOf(benhs.get(i).getDoXacNhan()), i, 1);
+            model.setValueAt(benhs.get(i).getThongTin(), i, 2);
+          }
+        tenBenhNhanLabel.setText(ctrl.getBn().getName());
+
     }
 
     /**
@@ -50,7 +69,7 @@ public class ketQuaGUI extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Double.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false
@@ -74,6 +93,11 @@ public class ketQuaGUI extends javax.swing.JFrame {
         jLabel1.setText("Kết quả");
 
         saveBtn.setText("Lưu");
+        saveBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                saveBtnMouseClicked(evt);
+            }
+        });
         saveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveBtnActionPerformed(evt);
@@ -150,6 +174,16 @@ public class ketQuaGUI extends javax.swing.JFrame {
         this.dispose();
         ctrl.getImportantLvl().setVisible(true);
     }//GEN-LAST:event_returnBtnMouseClicked
+
+    private void saveBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_saveBtnMouseClicked
+        // TODO add your handling code here:
+        this.dispose();
+        ctrl.getImportantLvl().dispose();
+        ctrl.getNhapXung().dispose();
+        ctrl.getImportantLvl().dispose();
+        ctrl.getCaChanDoan().dispose();
+        ctrl.showMainGUI();
+    }//GEN-LAST:event_saveBtnMouseClicked
 
     /**
      * @param args the command line arguments
