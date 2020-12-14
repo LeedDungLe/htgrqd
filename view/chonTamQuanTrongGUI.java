@@ -83,7 +83,7 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Triệu chứng", "Xung", "Tầm quan trọng"
+                "Symtom", "Pulse", "Importance"
             }
         ) {
             Class[] types = new Class [] {
@@ -109,25 +109,25 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
         }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Lựa chọn tầm quan trọng");
+        jLabel1.setText("Choose importance");
 
-        returnBtn.setText("Quay lại");
+        returnBtn.setText("Back");
         returnBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 returnBtnMouseClicked(evt);
             }
         });
 
-        setImportantLvlComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Như nhau", "Khác nhau" }));
+        setImportantLvlComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Same", "Different" }));
         setImportantLvlComboBox.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 setImportantLvlComboBoxItemStateChanged(evt);
             }
         });
 
-        jLabel2.setText("Chọn mức độ quan trọng");
+        jLabel2.setText("Choose importance");
 
-        startCalcBtn.setText("Bắt đầu tính toán");
+        startCalcBtn.setText("Start Calulate");
         startCalcBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 startCalcBtnMouseClicked(evt);
@@ -139,7 +139,7 @@ public class chonTamQuanTrongGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Các triệu chứng có thể có: ");
+        jLabel3.setText("Possible symtoms ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

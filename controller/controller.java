@@ -234,15 +234,15 @@ public class controller {
             double gt = benh.getDoXacNhan();
             String tt ;
             if(gt == 1){
-                tt = "Hoàn toàn xác nhận";
+                tt = "Absolute confirm";
             }else if(gt < 1 & gt >=  0.6){
-                tt = "Gần như xác nhận";
+                tt = "Likely confirm";
             }else if(gt < 0.6 & gt >= e ){
-                tt ="Có thể xác nhận";
+                tt ="Possible confirm";
             }else if (gt < e & gt > 0){
-                tt="Không xác định";
+                tt="Possible exclusion";
             }else{
-                tt="Loại trừ hoàn toàn";
+                tt="Absolute exclusion";
             }
             benh.setThongTin(tt);
         }        

@@ -64,7 +64,7 @@ public class nhapXungGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Xung", "mức độ", "tay", "vị trí"
+                "Pulse", "level", "hand", "position "
             }
         ) {
             Class[] types = new Class [] {
@@ -91,11 +91,11 @@ public class nhapXungGUI extends javax.swing.JFrame {
         }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Nhập vào các xung");
+        jLabel1.setText("     Input pulse");
 
-        jLabel2.setText("Tên xung");
+        jLabel2.setText("Pulse name");
 
-        jLabel3.setText("Độ mờ");
+        jLabel3.setText("Fuzzy level");
 
         fuzzyLvl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,11 +103,16 @@ public class nhapXungGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Tay");
+        jLabel4.setText("Hand");
 
-        jLabel5.setText("Vị trí");
+        jLabel5.setText("Position ");
 
-        tay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Trái", "Phải" }));
+        tay.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Left", "Right" }));
+        tay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tayActionPerformed(evt);
+            }
+        });
         tay.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 tayPropertyChange(evt);
@@ -116,24 +121,29 @@ public class nhapXungGUI extends javax.swing.JFrame {
 
         viTri.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cun", "Guan", "Chi" }));
 
-        startCalcBtn.setText("Tính toán bệnh");
+        startCalcBtn.setText("Calculate");
         startCalcBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 startCalcBtnMouseClicked(evt);
             }
         });
 
-        returnBtn.setText("Quay lại");
+        returnBtn.setText("Back");
         returnBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 returnBtnMouseClicked(evt);
             }
         });
 
-        addBtn.setText("Thêm");
+        addBtn.setText("Add");
         addBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addBtnMouseClicked(evt);
+            }
+        });
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
             }
         });
 
@@ -160,12 +170,11 @@ public class nhapXungGUI extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(addBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
-                                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 56, Short.MAX_VALUE)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(fuzzyLvl, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
@@ -276,6 +285,14 @@ public class nhapXungGUI extends javax.swing.JFrame {
     private void fuzzyLvlActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fuzzyLvlActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_fuzzyLvlActionPerformed
+
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addBtnActionPerformed
+
+    private void tayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tayActionPerformed
 
     /**
      * @param args the command line arguments

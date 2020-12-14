@@ -49,7 +49,7 @@ public class caChanDoanGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Họ và tên");
+        jLabel1.setText("Full name");
 
         ten.setToolTipText("");
         ten.addActionListener(new java.awt.event.ActionListener() {
@@ -58,11 +58,11 @@ public class caChanDoanGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Tuổi");
+        jLabel2.setText("Age");
 
-        jLabel3.setText("Chiều cao");
+        jLabel3.setText("Height");
 
-        jLabel4.setText("Cân nặng");
+        jLabel4.setText("Weight ");
 
         chieuCao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +83,7 @@ public class caChanDoanGUI extends javax.swing.JFrame {
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Tạo ca chẩn đoán");
+        jLabel5.setText("Create a diagnostic ");
 
         diaChi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,16 +91,16 @@ public class caChanDoanGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Địa chỉ");
+        jLabel6.setText("Address");
 
-        startBtn.setText("Tiến hành chẩn đoán");
+        startBtn.setText("Start diagnose");
         startBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 startBtnMouseClicked(evt);
             }
         });
 
-        returnBtn.setText("Quay lai");
+        returnBtn.setText("back");
         returnBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 returnBtnMouseClicked(evt);
@@ -121,18 +121,18 @@ public class caChanDoanGUI extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(startBtn)
-                        .addGap(26, 26, 26)
-                        .addComponent(returnBtn))
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(ten)
-                        .addComponent(chieuCao)
-                        .addComponent(tuoi, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                        .addComponent(canNang, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                        .addComponent(diaChi)))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(startBtn)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ten, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(chieuCao, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tuoi, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                        .addComponent(canNang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                        .addComponent(diaChi, javax.swing.GroupLayout.Alignment.LEADING)))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

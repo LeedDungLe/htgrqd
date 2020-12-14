@@ -65,7 +65,7 @@ public class ketQuaGUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Triệu chứng", "Độ xác nhận", "Thông tin"
+                "Systoms", "Confirmation ", "Information "
             }
         ) {
             Class[] types = new Class [] {
@@ -90,9 +90,9 @@ public class ketQuaGUI extends javax.swing.JFrame {
         }
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Kết quả");
+        jLabel1.setText("Result ");
 
-        saveBtn.setText("Lưu");
+        saveBtn.setText("Save");
         saveBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 saveBtnMouseClicked(evt);
@@ -104,9 +104,9 @@ public class ketQuaGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Bệnh nhân:");
+        jLabel2.setText("Patient");
 
-        returnBtn.setText("Quay lại");
+        returnBtn.setText("Back");
         returnBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 returnBtnMouseClicked(evt);
